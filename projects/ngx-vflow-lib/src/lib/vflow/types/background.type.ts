@@ -1,29 +1,36 @@
-export type Background = ColorBackground | DotsBackground
+export type Background = ColorBackground | DotsBackground | CustomBackground;
 
 export interface ColorBackground {
-  type: 'solid'
-  color: string
+  type: 'solid';
+  color: string;
 }
 
 export interface DotsBackground {
-  type: 'dots'
+  type: 'dots';
   /**
    * Gap between dots
    */
-  gap?: number
+  gap?: number;
 
   /**
    * Color of the dot
    */
-  color?: string
+  color?: string;
 
   /**
    * Diameter of the dot
    */
-  size?: number
+  size?: number;
 
   /**
    * Color behind tha dot pattern
    */
-  backgroundColor?: string
+  backgroundColor?: string;
+}
+
+//Custom Svg Background
+export interface CustomBackground {
+  type: 'custom';
+  color?: string;
+  svg: string;
 }
